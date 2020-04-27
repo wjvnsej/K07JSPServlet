@@ -31,7 +31,7 @@ public void showGugudan(JspWriter out) {
 	<% 
 		showGugudan(out);
 	%>
-	
+	 
 	
 	<h3>구구단 출력2 - 표현식으로 구현</h3>
 	<table border='1' width='700'>
