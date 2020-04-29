@@ -8,7 +8,7 @@
 <title>ResponseJDBC.jsp</title>
 </head>
 <body>
-
+ 
 <%
 	/* 
 	web.xml에 입력된 컨텍스트 초기화 파라미터를 가져온다.
