@@ -2,13 +2,18 @@ package model;
 
 import java.sql.Date;
 
+/*
+DTO객체(Data Transfer Object)
+	: 데이터를 저장하기 위한 객체로 멤버변수, 생성자, getter/setter
+	메소드를 가지고 있는 클래스로 일반벅인 자바빈(Been)규약을 따른다.
+*/
 public class MemberDTO {
 	
 	//멤버변수 : 정보은닉을 위해 private으로 선언함.
 	private String id;
 	private String pass;
 	private String name;
-	private java.sql.Date regidate;
+	private Date regidate;
 	
 	//기본생성자
 	public MemberDTO() {}
