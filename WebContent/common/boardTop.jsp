@@ -17,7 +17,7 @@
             <!-- Links -->
             <ul class="navbar-nav">
                <li class="nav-item">
-                  <a class="nav-link text-dark" href="#">자유게시판</a>
+                  <a class="nav-link text-dark" href="../08Board1/BoardList.jsp">자유게시판</a>
                </li>
                <li class="nav-item">
                   <a class="nav-link text-dark" href="#">자료실</a>
@@ -46,18 +46,28 @@
                </div>
             </form>
             <ul class="navbar-nav ml-auto" >
-               <!-- <li class="nav-item">
+            
+            <% if(session.getAttribute("USER_ID") == null) { %>
+               <li class="nav-item"> <!-- 회원가입 -->
                   <a class="nav-link text-dark" href="#"><i class='fas fa-edit' style='font-size:20px'></i>회원가입</a>
                </li>
-               <li class="nav-item">
+               <li class="nav-item"> <!-- 로그인 -->
+                  <a class="nav-link text-dark" href="../06Session/Login.jsp"><i class='fas fa-sign-in-alt' style='font-size:20px'></i>로그인</a>
+               </li>
+			<%
+            }
+            else {
+			%>
+               <li class="nav-item"> <!-- 회원정보수정 -->
                   <a class="nav-link text-dark" href="#"><i class='fa fa-cogs' style='font-size:20px'></i>회원정보수정</a>
-               </li> -->
-               <li class="nav-item">
-                  <a class="nav-link text-dark" href="#"><i class='fas fa-sign-in-alt' style='font-size:20px'></i>로그인</a>
                </li>
-               <li class="nav-item">
-                  <a class="nav-link text-dark" href="#"><i class='fas fa-sign-out-alt' style='font-size:20px'></i>로그아웃</a>
+               <li class="nav-item"> <!-- 로그아웃 -->
+                  <a class="nav-link text-dark" href="../06Session/Logout.jsp"><i class='fas fa-sign-out-alt' style='font-size:20px'></i>로그아웃</a>
                </li>
+			<%
+            }
+			%>
+               
             </ul>
          </nav>
       </div>

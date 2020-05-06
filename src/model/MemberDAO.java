@@ -142,7 +142,7 @@ public class MemberDAO {
 		   rs = psmt.executeQuery();
 		   
 		   if(rs.next()) {
-			   maps.put("id", rs.getString("1"));
+			   maps.put("id", rs.getString(1));
 			   maps.put("pass", rs.getString("pass"));
 			   maps.put("name", rs.getString("name"));
 		   }
