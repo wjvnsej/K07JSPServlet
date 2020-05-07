@@ -36,6 +36,6 @@ else {
 		alert("글쓰기에 실패하였습니다.");
 		history.go(-1);
 	</script>
-<% 
+<%
 }
 %>
