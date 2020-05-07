@@ -36,7 +36,7 @@
                   </div>
                </li>
             </ul>
-
+			<!-- 
             <form class="form-inline mt-3 ml-3" method="get" action="">
                <div class="input-group mb-3">
                   <input type="text" class="form-control" placeholder="Search">
@@ -45,6 +45,13 @@
                   </div>
                </div>
             </form>
+             -->
+             
+             <% if(session.getAttribute("USER_ID") != null) { %>
+             	<h5 class="ml-4"><%=session.getAttribute("USER_NAME") %>님,
+             		로그인 하셨습니다.</h5>
+             <%} %>
+             
             <ul class="navbar-nav ml-auto" >
             
             <% if(session.getAttribute("USER_ID") == null) { %>

@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
+
 public class MemberDAO {
 	
 	//멤버변수 (클래스 전체 멤버메소드에서 접근가능)

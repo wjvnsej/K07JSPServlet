@@ -36,7 +36,7 @@
 	
 	
 	/* 
-	//방법2 : 회원테이블에서 레코드를 추출한 후 MemberDAO객체에 저장 후 반환받기
+	//방법2 : 회원테이블에서 레코드를 추출한 후 MemberDTO객체에 저장 후 반환받기
 	MemberDTO memberDTO = dao.getMemberDTO(id, pw);
 	//DTO객체의 name컬럼의 값이 있는지 확인..
 	if(memberDTO.getId() != null) {

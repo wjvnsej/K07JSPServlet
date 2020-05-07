@@ -14,21 +14,43 @@
 		<jsp:include page="../common/boardLeft.jsp" />
 		<div class="col-9 pt-3">
 			<h3>게시판 - <small>Write(작성)</small></h3>
-						
+			<script>
+				//유기명함수
+				function checkValidate(frm) {
+					
+					if(frm.title.value == "") {
+		                alert("제목을 입력해주세요");//경고창 띄움
+		                frm.title.focus();//입력란으로 포커스 이동
+		                return false;//전송되지 않도록 이벤트리스너로 false반환
+		            }
+		            if(frm.content.value == "") {
+		                alert("내용을 입력해주세요");
+		                frm.content.focus();
+		                return false;
+		            }
+				}
+				//무기명함수 
+				var checkValidate = function(frm) {
+					//실행부는 유기명함수와 동일	
+				} 
+				
+			</script>						
 			<div class="row mt-3 mr-1">
-				<table class="table table-bordered table-striped">
-				<form action="">
+			<table class="table table-bordered table-striped">
+			<form name="writefrm" method="post" action="WriteProc.jsp" onsubmit="return checkValidate(this);">
 				<colgroup>
 					<col width="20%"/>
 					<col width="*"/>
 				</colgroup>
 				<tbody>
+					<!-- 
 					<tr>
 						<th class="text-center align-middle">작성자</th>
 						<td>
 							<input type="text" class="form-control"	style="width:100px;"/>
 						</td>
 					</tr>
+					 
 					<tr>
 						<th class="text-center" 
 							style="vertical-align:middle;">패스워드</th>
@@ -37,21 +59,24 @@
 								style="width:200px;"/>
 						</td>
 					</tr>
+					 -->
 					<tr>
 						<th class="text-center"
 							style="vertical-align:middle;">제목</th>
 						<td>
-							<input type="text" class="form-control" />
+							<input type="text" class="form-control" name="title" />
 						</td>
 					</tr>
+					
 					<tr>
 						<th class="text-center"
 							style="vertical-align:middle;">내용</th>
 						<td>
 							<textarea rows="10" 
-								class="form-control"></textarea>
+								class="form-control" name="content"></textarea>
 						</td>
 					</tr>
+					<!-- 
 					<tr>
 						<th class="text-center"
 							style="vertical-align:middle;">첨부파일</th>
@@ -59,6 +84,7 @@
 							<input type="file" class="form-control" />
 						</td>
 					</tr>
+					 -->
 				</tbody>
 				</table>
 			</div>
@@ -77,7 +103,7 @@
 					<button type="reset" class="btn btn-dark">Reset</button>
 					<button type="button" class="btn btn-warning" onclick="location.href='BoardList.jsp';">리스트보기</button>
 				</div>
-				</form>
+			</form>
 			</div>
 		</div>
 	</div>
