@@ -17,6 +17,22 @@
   </context-param>
   
   
+	<!-- 
+	게시판 페이지처리(Paging) 관련 파라미터
+	PAGE_SIZE : 한 페이지에 출력 할 게시물의 갯수. 보통 10 ~ 30정도로 설정한다.
+	BLOCK_PAGE : 한 블록당 출력할 페이지 번호의 갯수. 보통 5 ~ 10정도로 설정한다.
+	 -->
+	<context-param>
+	 	<param-name>PAGE_SIZE</param-name>
+	 	<param-value>10</param-value>
+  	</context-param>
+  	<context-param>
+	 	<param-name>BLOCK_PAGE</param-name>
+	 	<param-value>5</param-value>
+  	</context-param>
+   
+  
+  
   
   <!-- 
   	세션유지시간설정 : 여기서 설정한 시간은 '분' 단위
