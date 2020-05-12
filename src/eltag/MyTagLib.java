@@ -1,6 +1,8 @@
 package eltag;
 
-import org.apache.taglibs.standard.lang.jstl.BooleanLiteral;
+import com.sun.org.apache.regexp.internal.recompile;
+
+import model.MemberDAO;
 
 public class MyTagLib {
 	
@@ -89,4 +91,40 @@ public class MyTagLib {
 		
 	}
 	
+	
+	/*
+	아이디, 패스워드, DB연결을 위한 드라이버, URL을 인자로 받아
+	회원여부를 판단하여 true/false를 반환해주는 메소드
+	*/
+	public static boolean memberLogin(String id, String pw, 
+			String drv, String url) {
+		// 1. DB연결을 위한 객체생성
+		MemberDAO dao = new MemberDAO(drv, url);
+		
+		// 2. 아이디/패스워드를 통한 회원인증 및 결과반환
+		boolean isBool = dao.isMember(id, pw);
+		
+		// 3. 2번에서의 결과를 호출한 지점으로 반환
+		return isBool;
+	}
+	
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
