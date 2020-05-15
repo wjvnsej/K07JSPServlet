@@ -47,6 +47,29 @@
 	 </a>
 	 
 	 
+	 <h3>서블릿으로 간단한 사칙연산 계산기 만들기</h3>
+	 
+	 <form method="get" 
+	 		action="<%=request.getContextPath() %>/Servlet/Calculate.kosmo">
+	 	
+	 	<input type="text" name="firstNum" size="5" />
+	 	<select name="operator">
+	 		<option value="+">+</option>
+	 		<option value="-">-</option>
+	 		<option value="*">*</option>
+	 		<option value="/">/</option>
+	 	</select>
+	 	
+	 	<input type="text" name="secondNum" size="5" />
+	 	<input type="submit" value="계산결과는?" />
+	 	
+	 	<h4 style="color: red; font-size: 1.5em">
+	 		 ${calResult }
+	 	</h4>
+	 	
+	 </form>
+	 
+	 
 </body>
 </html>
 
