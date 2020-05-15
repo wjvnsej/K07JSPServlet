@@ -144,6 +144,23 @@
 	
 	
 	
+	<!-- 서블릿으로 게시판 만들기 -->
+	<servlet>
+		<servlet-name>DataRoomList</servlet-name>
+		<servlet-class>controller.ListCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataRoomList</servlet-name>
+		<url-pattern>/DataRoom/DataList</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	
+	
+	
   
   
   <!--

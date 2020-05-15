@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%-- DataList.jsp --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <jsp:include page="../common/boardHead.jsp" />
@@ -34,61 +34,88 @@
 				</form>	
 			</div>
 			<div class="row mt-3">
-				<!-- 게시판리스트부분 -->
-				<table class="table table-bordered table-hover table-striped">
-				<colgroup>
-					<col width="60px"/>
-					<col width="*"/>
-					<col width="120px"/>
-					<col width="120px"/>
-					<col width="80px"/>
-					<col width="60px"/>
-				</colgroup>				
-				<thead>
-				
-				<tr style="background-color: rgb(133, 133, 133); " class="text-center text-white">
-					<th width="10%">번호</th>
-					<th width="50%">제목</th>
-					<th width="15%">작성자</th>
-					<th width="15%">작성일</th>
-					<th width="10%">조회수</th>
-					<th>첨부</th>
-				</tr>
-				</thead>				
-				<tbody>
-			<%
-			///////////////////////////////////////////////////////////
-			%>
-				<tr>
+			<!-- 게시판리스트부분 -->
+			<table class="table table-bordered table-hover table-striped">
+			<colgroup>
+				<col width="60px"/>
+				<col width="*"/>
+				<col width="120px"/>
+				<col width="120px"/>
+				<col width="80px"/>
+				<col width="60px"/>
+			</colgroup>				
+			<thead>
+			<tr style="background-color: rgb(133, 133, 133); " 
+				class="text-center text-white">
+				<th width="10%">번호</th>
+				<th width="50%">제목</th>
+				<th width="15%">작성자</th>
+				<th width="15%">작성일</th>
+				<th width="10%">조회수</th>
+				<th>첨부</th>
+			</tr>
+			</thead>				
+			<tbody>
+			<!-- 
+				ListCtrl 서블릿에서 request 영역에 저장한 ResultSet을 JSTL과 EL을
+				통해 화면에 내용을 출력한다.
+					choose
+						when -> lists 컬렉션에 아무값도 없을 때
+						otherwise -> ResultSet 결과가 있을 때(즉 출력할 레코드가 있을 때)
+			 -->
+			<c:choose>
+				<c:when test="${empty lists }">
+					<tr>
 					<td colspan="6" align="center" height="100">
 						등록된 게시물이 없습니다.
 					</td>
 				</tr>
-			<% 
-			/////////////////////////////////////////////////
-			%>
+				
 				<!-- 리스트반복 start -->
-				<tr>
-					<td class="text-center"></td>
-					<td class="text-left"></td>
-					<td class="text-center"></td>
-					<td class="text-center"></td>
-					<td class="text-center"></td>
-					<td class="text-center"><i class="material-icons" 
-						style="font-size:20px">attach_file</i></td>
-				</tr>
-				<!-- 리스트반복 end -->
-			<%
-			/////////////////////////////////////////////////////
-			%>
-				</tbody>
-				</table>
+				</c:when>
+				<c:otherwise>
+					<c:forEach items="${lists }" var="row" varStatus="loop">
+						<tr>
+							<td class="text-center"> <!-- 가상번호 -->
+								${map.totalCount - (((map.nowPage - 1) * map.pageSize) +
+								loop.index) }
+							</td>
+							
+							<td class="text-left"> <!-- 제목 -->
+								<a href="../DataRoom/DataView?idx=${row.idx }&nowPage=${param.nowPage }">
+									${row.title } </a>
+							</td>
+							
+							<td class="text-center">${row.name }</td> <!-- 작성자 -->
+							
+							<td class="text-center">${row.postdate }</td> <!-- 조회수 -->
+							
+							<td class="text-center">${row.visitcount }</td> <!-- 작성일 -->
+							
+							<td class="text-center"> <!-- 첨부파일 -->
+								<c:if test="${not empty row.attachedfile }"> 
+									<a href="./Download?filename=${row.attachedfile }&idx=${row.idx }">
+										<img src="../images/disk.png" width="20" />
+									</a>
+								</c:if>
+							</td>
+							
+						</tr>
+					</c:forEach>
+				</c:otherwise>
+			</c:choose>
+			<!-- 리스트반복 end -->
+			</tbody>
+			</table>
 			</div>
 			<div class="row">
 				<div class="col text-right">
 					<!-- 각종 버튼 부분 -->
 					<!-- <button type="button" class="btn">Basic</button> -->
-					<button type="button" class="btn btn-primary" onclick="location.href='BoardWrite.jsp';">글쓰기</button>
+					
+					<button type="button" class="btn btn-primary" 
+						onclick="location.href='../DataRoom/DataWrite';">글쓰기</button>
+					
 					<!-- <button type="button" class="btn btn-secondary">수정하기</button>
 					<button type="button" class="btn btn-success">삭제하기</button>
 					<button type="button" class="btn btn-info">답글쓰기</button>
