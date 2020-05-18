@@ -183,9 +183,18 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DataRoomPassword</servlet-name>
-		<url-pattern>DataRoom/DataPassword</url-pattern>
+		<url-pattern>/DataRoom/DataPassword</url-pattern>
 	</servlet-mapping>
 	
+	<!-- 자료실 게시글 삭제하기 -->
+	<servlet>
+		<servlet-name>DataRoomDelete</servlet-name>
+		<servlet-class>controller.DeleteCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DataRoomDelete</servlet-name>
+		<url-pattern>/DataRoom/DataDelete</url-pattern>
+	</servlet-mapping>
 	
 	
 	

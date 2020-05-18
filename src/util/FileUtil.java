@@ -1,5 +1,7 @@
 package util;
 
+import java.io.File;
+
 import javax.servlet.http.HttpServletRequest;
 
 import com.oreilly.servlet.MultipartRequest;
@@ -35,4 +37,46 @@ public class FileUtil {
 		
 	}
 	
+	//물리적경로에 저장된 파일을 삭제처리
+	public static void deleteFile(HttpServletRequest req, 
+			String directory, String filename) {
+		
+		//물리적 경로 가져오기
+		String savaDirectory = 
+				req.getServletContext().getRealPath(directory);
+		
+		//물리적경로를 통해 파일객체 생성
+		File f = new File(savaDirectory + File.separator + filename);
+		
+		//만약 해당경로에 파일이 존재한다면 삭제처리
+		if(f.exists()) {
+			f.delete();
+		}
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
