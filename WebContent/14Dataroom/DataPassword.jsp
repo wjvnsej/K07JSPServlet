@@ -41,6 +41,7 @@
 				<input type="hidden" name="mode" value="${mode }" />
 				<input type="hidden" name="nowPage" value="" />
 				
+				
 				<colgroup>
 					<col width="20%"/>
 					<col width="*"/>
@@ -61,19 +62,10 @@
 			</div>
 			<div class="row mb-3">
 				<div class="col text-right">
-					<!-- 각종 버튼 부분 -->
-					<!-- <button type="button" class="btn">Basic</button> -->
-					<!-- <button type="button" class="btn btn-primary" 
-						onclick="location.href='BoardWrite.jsp';">글쓰기</button> -->
-					<!-- <button type="button" class="btn btn-secondary">수정하기</button>
-					<button type="button" class="btn btn-success">삭제하기</button>
-					<button type="button" class="btn btn-info">답글쓰기</button>
-					<button type="button" class="btn btn-light">Light</button>
-					<button type="button" class="btn btn-link">Link</button> -->
 					<button type="submit" class="btn btn-danger">전송하기</button>
 					<button type="reset" class="btn btn-dark">Reset</button>
 					<button type="button" class="btn btn-warning" 
-						onclick="location.href='../DataRoom/DataList';">리스트보기</button>
+						onclick="location.href='../DataRoom/DataList?nowPage=${param.nowPage }&searchColumn=${param.searchColumn }&searchWord=${param.searchWord }';">리스트보기</button>
 				</div>
 			</form>
 			</div>

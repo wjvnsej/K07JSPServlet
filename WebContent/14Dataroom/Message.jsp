@@ -33,7 +33,7 @@
 		history.back();
 	</c:when>
 	<c:otherwise>
-		alert('파일용량을 초과했습니다');
+		alert('파일업로드를 실패하였습니다');
 		history.back();
 	</c:otherwise>
 </c:choose>
