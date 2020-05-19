@@ -15,7 +15,7 @@ import javax.mail.internet.MimeMessage;
 public class SMTPAuth extends Authenticator{
    
    protected PasswordAuthentication getPasswordAuthentication() {
-      return new PasswordAuthentication("wjvnsej1@naver.com", "9575ehdrjs!!");
+      return new PasswordAuthentication("wjvnsej1@naver.com", "비밀번호");
    }
 
    
