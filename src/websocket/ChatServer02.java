@@ -33,7 +33,7 @@ public class ChatServer02 {
 		//Set컬렉션에 사용자 세션아이디를 추가한다.
 		clients.add(session);
 		
-		System.out.println("연결되었습니다!!");
+		System.out.println(session + "연결되었습니다!!");
 		System.out.println("Open session id : " + session.getId());
 		System.out.println("session.getBasicRemote() : " + 
 				session.getBasicRemote());
@@ -45,7 +45,7 @@ public class ChatServer02 {
 		
 		//Set컬렉션에 사용자 세션을 삭제한다.
 		clients.remove(session);
-		System.out.println("종료되었습니다!!");
+		System.out.println(session + "종료되었습니다!!");
 	}
 	
 	//클라이언트가 보낸 메세지가 도착했을 때..

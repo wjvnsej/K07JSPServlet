@@ -6,26 +6,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>chatting03Main.jsp</title>
+<title>chatting04Main.jsp</title>
 </head>
 <body>
 	<script>
-	function chatWin03(){
+	function chatWin04(){
 		var id = document.getElementById("chat_id");
 		if(id.value==""){
 			alert("닉네임을 입력 후 채팅창을 열어주세요");
 			id.focus();
 			return; 
 		}
-		window.open("chatting03.jsp?chat_id="+id.value, 
+		window.open("chatting04.jsp?chat_id="+id.value, 
 				"",
-				"width=500,height=700");
+				"width=650,height=800");
 		id.value="";
 	}
 	</script>
-	<h2>웹소켓03 - 아이디 적용해서 채팅창 띄워주기</h2>
+	<h2>웹소켓04 - 아이디 적용 + 채팅창UI적용</h2>
 	아이디 : <input type="text" id="chat_id" />
-	<button type="button" onclick="chatWin03();">채팅창열기</button>
+	<button type="button" onclick="chatWin04();">채팅창열기</button>
 </body>
 
 </html>

@@ -39,7 +39,7 @@ var inputMessage = document.getElementById("inputMessage");
 var chat_id = document.getElementById("chat_id").value;
 //웹소켓 객체 생성(서버에 접속)
 var webSocket = 
-	new WebSocket("ws://192.168.219.118:8282/JSPServlet/ChatServer02");
+	new WebSocket("ws://localhost:8282/JSPServlet/ChatServer02");
 
 /*
 	웹소켓 연결 후 메세지전송, 에러발생 등은 모두 이벤트를 통해 함수를 호출한다.
