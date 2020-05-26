@@ -10,8 +10,6 @@ import java.util.Vector;
 
 import javax.servlet.ServletContext;
 
-import com.sun.org.apache.regexp.internal.recompile;
-
 public class BbsDAO {
 	
 	

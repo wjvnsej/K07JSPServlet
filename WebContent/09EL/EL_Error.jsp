@@ -115,10 +115,12 @@
 		EL을 통해 4가지 영역에 접근할 때는 XXXScope 패턴으로 사용한다.
 		pageContext는 JSP에서 접근 시 사용한다.
 		 -->
+		 <%-- 
 		<li>
 			\${pageContext.nop } : \${pageContext.nop }
 			[컴파일오류발생 -> 내장객체명은 정해져 있기 때문]
 		</li>
+		 --%>
 	</ul>
 	
 	<h2>EL의 내장객체 중 사용자가 정의한 속성에 접근하는
@@ -144,8 +146,9 @@
 	
 	<!-- Infinity출력 시 에러 -->
 	<h2>숫자를 0으로 나누면 INFINITE</h2>
+	<%-- 
 	\${10 div 0 } : ${10 div 0 }
-	
+	 --%>
 	<h2>EL변수에 값 할당시 [톰캣8.0부터는 정상. 이전버전은 에러]</h2>
 	<c:set var="number" value="100" scope="request"/>
 	
