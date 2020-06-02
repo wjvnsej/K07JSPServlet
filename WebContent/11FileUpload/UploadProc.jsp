@@ -74,7 +74,7 @@
 		request.getRequestDispatcher("FileUploadMain.jsp")
 			.forward(request, response);
 	}
-	%>
+%>
 <!DOCTYPE html>
 <html>
 <head>
