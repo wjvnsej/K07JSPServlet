@@ -138,7 +138,7 @@
 					</ul>
 					
 				</div>				
-			</div>		
+			</div>
 		</div>
 	</div>
 	<jsp:include page="../common/boardBottom.jsp" />
